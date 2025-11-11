@@ -9,7 +9,6 @@ const imgWeather = document.getElementById('imgWeather');
 const key = "0b5c96dc26c41f4888b05e7e78d534c7";
 const defaultCity = "London";
 const changeTemp = 273.15;
-let iconWeather;
 let temperature;
 
 function initliAppWeather() {
@@ -17,23 +16,23 @@ function initliAppWeather() {
 }
 
 async function fetchWeather() {
+    if(inputCity.value === "") {
+      inputCity.style.border = "2px solid red";
+      return;
+    }
     try {
-      if(inputCity.value === "") {
-        inputCity.style.border = "2px solid red";
-      } else {
         inputCity.style.border = "";
         const rs = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${inputCity.value}&appid=${key}`);
         const data = await rs.json();
         temperature = data.main.temp - changeTemp;
+        let iconWeather = data.weather[0].description;
+        checkWeather(iconWeather);
         textWeatherTemp.innerHTML = `${Math.floor(temperature)}°C`;
         textWeatherCity.innerHTML = inputCity.value;
         humidityWeather.innerHTML = `${data.main.humidity}%`;
         windSpeed.innerHTML = `${Math.floor(data.wind.speed*3.6)} Km/h`;
-        iconWeather = data.weather[0].description;
-        checkWeather(iconWeather);
-      }
     } catch (err) {
-      alert("Not data found");
+      alert("Not data");
     }
 }
 
@@ -41,7 +40,7 @@ btnSearch.addEventListener('click', () => {
   fetchWeather();
 })
 
-function checkWeather(iconWeather) {
+async function checkWeather(iconWeather) {
   switch(iconWeather) {
     case "clear sky":
       imgWeather.setAttribute("src","https://openweathermap.org/img/wn/01d@2x.png");

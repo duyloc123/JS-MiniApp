@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/db6ac4acea.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Zalando+Sans+SemiExpanded:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styleWeather.css">
+    <title>Weather App</title>
+</head>
+<body>
+    <div class="weatherApp">
+        <div class="block">
+            <div class="container">
+                <div class="headerWeather">
+                    <div class="search">
+                        <div class="search-bg"></div>
+                        <input type="text" id="searchWeather"
+                        class="searchWeather"> 
+                    </div>
+                    <button type="button" class="btn btn__search" id="btn__search">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                </div>
+                <div class="bodyWeather">
+                    <img src="https://cdn2.iconfinder.com/data/icons/weather-flat-14/64/weather02-512.png" alt="Weather Sun" style="width: 200px; height: 200px;" id="imgWeather">
+                    <h2 class="weather__temperature" id="weather__temperature">42°C</h2>
+                    <h3 class="weather__cityName" id="weather__cityName">New York</h3>
+                </div>
+                <div class="footerWeather">
+                    <div class="footerLeft">
+                        <i class="fa-solid fa-water"></i>
+                        <div class="content">
+                            <p id="humidity">64%</p>
+                            <p>Humidity</p>
+                        </div>
+                    </div>
+                    <div class="footerRight">
+                        <i class="fa-solid fa-wind"></i>
+                        <div class="content">
+                            <p id="windSpeed">18 km/h</p>
+                            <p>Wind Speed</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="./weather.js"></script>
+</html>

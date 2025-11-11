@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./src/style.css">
+    <title>Javascript</title>
+</head>
+<body>
+    <a href="./pages/weatherApp.html">Weather App</a>
+    <h1>Variable</h1>
+    <h3>Let, Const, Var</h3>
+    <ul>
+        <li>Var: </li>
+        <li>Const</li>
+        <li>Let</li>
+    </ul>
+    <h3>Data types</h3>
+    <ul>
+        <li>Number</li>
+        <li>String</li>
+        <li>Boolean</li>
+        <li>Undefined</li>
+        <li>Null</li>
+        <li>BigInt</li>
+        <li>Symbol</li>
+    </ul>
+    <h3>Closure</h3>
+    <p> Javascript allows writing function inside an outer function.
+    We can write as many inner functions as we want. If inner function access variables of
+    outer function then it called closure.
+    - Inner function can access variables of outer function
+    - Outer function can't access variables of inner function</p>
+    <h3>Try-Catch</h3>
+    <input type="text" id="input__check">
+    <div id="codes"></div>
+    <h3>Arrays Methods</h3>
+    <p><strong>push:</strong> Add element to the end of the array</p>
+    <p><strong>pop:</strong> Remove element to end of the array, return the new array, return items has remove</p>
+    <p><strong>splice(start,deleteCount, item 1, item 2, item N)</strong>To create a new array</p>
+    <p><strong>indexOf(searchElement, fromIndex)</strong>Find position index in array</p>
+    <p><strong>findIndex</strong></p>
+    <p><strong>filter</strong>Find all values that satisfy the condition</p>
+    <p><strong>find</strong>Only one value satisfies the first condition</p>
+    <p><strong>sort</strong>Sort in ascending or descending order</p>
+    <table id="userList">
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+        </tr>
+    </table>
+    <h1>Ordered List Arrow Cards</h1>
+	<ol class="olcards" id="olcards">
+	</ol>
+    <div class="container">
+        <div class="list">
+            <h1>To Do List</h1>
+            <form>
+                <div class="validInput">
+                    <input type="text" placeholder="Enter the task to be done" id="inputTask" class="inputCheck" >
+                    <span class="validNofication hidden" id="validNofication">Please enter at least 10 characters</span>
+                </div>
+                <button type="submit" class="btn__add" id="btn__add">Add</button>
+            </form>
+            <h3>Task List</h3>
+            <ul class="taskList" id="taskList">
+            </ul>
+        </div>
+    </div>
+    <h1>Class</h1>
+    <h1>HTTP</h1>
+    <h1>API</h1>
+    <p><Strong>Method API</Strong></p>
+    <ul>
+        <li>GET: The GET method requests a representation of the specified resource. Requests using GET should only retrieve data and should not contain a request content.</li>
+        <li>HEAD: The HEAD method asks for a response identical to a GET request, but without a response body.</li>
+        <li>PUT: The PUT method replaces all current representations of the target resource with the request content.</li>
+        <li>DELETE: The DELETE method deletes the specified resource.</li>
+        <li>PATCH: The PATCH method applies partial modifications to a resource.</li>
+    </ul>
+    <h1>Res API</h1>
+    <input type="text" name="inputUser" id="inputUser" placeholder="User:" required>
+    <input type="text" name="inputUserName" id="inputUserName" placeholder="User Name:" required>
+    <button class="btn__inputUser" id="btn__inputUser">Add</button>
+    <div class="content" id="content">
+        <!-- List User -->
+    </div>
+    <h3>Function ES6</h3>
+    <h3>Promise</h3>
+    <h3>Module</h3>
+    <h3>Web-storage</h3>
+    <form action="" class="formHidden" id="formHidden">
+        <input type="text" placeholder="User Name:" id="userName" />
+        <input type="password" placeholder="password" id="password" />
+        <button type="submit" id="btnLogin">Login</button>
+    </form>
+    <h3 id="infoUser"></h3>
+</body>
+<script src="./src/main.js" type="module"></script>
+</html>

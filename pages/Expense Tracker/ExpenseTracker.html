@@ -17,25 +17,24 @@
             <div class="expense">
                 <h1>Expense Tracker App</h1>
                 <div class="infoTransaction">
+                    <select id="type" class="type">
+                        <option value="income">Income</option>
+                        <option value="expense">Expense</option>
+                    </select>
                     <form class="form__info">
                         <label for="transactionName">
                             Enter Transaction Name:
                         </label>
-                        <input type="text" name="transactionName" class="transactionName" id="transactionName" required>
+                        <input type="text" name="transactionName" class="transactionName" id="transactionName">
                         <label for="inputAmount">
                             Enter The Amount:
                         </label>
-                        <input type="text" name="inputAmount" class="inputAmount" id="inputAmount" required>
-                        <button type="submit" id="btn btn__addTransaction" class="btn__addTransaction">Add Transaction</button>
+                        <input type="text" name="inputAmount" class="inputAmount" id="inputAmount">
+                        <button type="submit" id="btn__addTransaction" class="btn__addTransaction">Add Transaction</button>
                     </form>
                     <h2>Transaction List</h2>
                     <ul class="transactionList" id="transactionList">
-                        <li>
-                            <p class="transactionName">Name</p>
-                            <p class="transactionAmout">Amount</p>
-                            <button class="btn btn__deleteTransaction" id="btn__deleteTransaction">Delete Transaction</button>
-                            <p class="spending" id="spending">Spending</p>
-                        </li>
+                        <!-- List Expense Tracker -->
                     </ul>
                     <div class="data">
                         <div class="income" id="income">

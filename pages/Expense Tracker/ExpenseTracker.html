@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./expenseApp.css">
+    <script src="https://kit.fontawesome.com/db6ac4acea.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Stack+Sans+Text:wght@200..700&display=swap" rel="stylesheet">
+
+    <title>Expense Tracker</title>
+</head>
+<body>
+    <div class="expenseTracker">
+        <div class="container">
+            <div class="expense">
+                <h1>Expense Tracker App</h1>
+                <div class="infoTransaction">
+                    <form class="form__info">
+                        <label for="transactionName">
+                            Enter Transaction Name:
+                        </label>
+                        <input type="text" name="transactionName" class="transactionName" id="transactionName" required>
+                        <label for="inputAmount">
+                            Enter The Amount:
+                        </label>
+                        <input type="text" name="inputAmount" class="inputAmount" id="inputAmount" required>
+                        <button type="submit" id="btn btn__addTransaction" class="btn__addTransaction">Add Transaction</button>
+                    </form>
+                    <h2>Transaction List</h2>
+                    <ul class="transactionList" id="transactionList">
+                        <li>
+                            <p class="transactionName">Name</p>
+                            <p class="transactionAmout">Amount</p>
+                            <button class="btn btn__deleteTransaction" id="btn__deleteTransaction">Delete Transaction</button>
+                            <p class="spending" id="spending">Spending</p>
+                        </li>
+                    </ul>
+                    <div class="data">
+                        <div class="income" id="income">
+                            <i class="fa-solid fa-sack-dollar"></i>
+                            <p class="incomeText">10,000$</p>
+                        </div>
+                        <div class="expenseTotal" id="expenseTotal">
+                            <i class="fa-solid fa-hand-holding-dollar"></i>
+                            <p class="expenseText">5,000$</p>
+                        </div>
+                        <div class="balance" id="balance">
+                            <i class="fa-solid fa-wallet"></i>
+                            <p class="balanceText">10,000$</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="./expenseTracker.js"></script>
+</html>

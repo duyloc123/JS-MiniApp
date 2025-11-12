@@ -5,6 +5,9 @@ const textWeatherCity = document.getElementById('weather__cityName');
 const humidityWeather = document.getElementById('humidity');
 const windSpeed = document.getElementById('windSpeed');
 const imgWeather = document.getElementById('imgWeather');
+const changeBlock = document.getElementById('block');
+const loading = document.getElementById('classic-3');
+const theme = document.getElementById('theme');
 
 const key = "0b5c96dc26c41f4888b05e7e78d534c7";
 const defaultCity = "London";
@@ -21,8 +24,13 @@ async function fetchWeather() {
       return;
     }
     try {
+        loading.style.display = "block";
+        changeBlock.style.opacity = "0.2";
         inputCity.style.border = "";
-        const rs = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${inputCity.value}&appid=${key}`);
+        const [rs] = await Promise.all([
+          fetch(`https://api.openweathermap.org/data/2.5/weather?q=${inputCity.value}&appid=${key}`),
+          new Promise(resolve => setTimeout(resolve,2000))
+        ]);
         const data = await rs.json();
         temperature = data.main.temp - changeTemp;
         let iconWeather = data.weather[0].description;
@@ -33,6 +41,9 @@ async function fetchWeather() {
         windSpeed.innerHTML = `${Math.floor(data.wind.speed*3.6)} Km/h`;
     } catch (err) {
       alert("Not data");
+    } finally {
+        loading.style.display = "";
+        changeBlock.style.opacity = "1";
     }
 }
 
@@ -75,4 +86,15 @@ async function checkWeather(iconWeather) {
 
 // initliAppWeather();
 
-// Todo: Theme Light
+function themeWeatherApp() {
+  theme.addEventListener('change', () => {
+    if(theme.value === "light") {
+      document.body.style.backgroundColor = "var(--second--bgColor)";
+    } if(theme.value === "dark") {
+      theme.setAttribute('class','theme-black');
+      document.body.style.backgroundColor = "var(--first--bgColor)";
+    }
+  })
+};
+
+themeWeatherApp();

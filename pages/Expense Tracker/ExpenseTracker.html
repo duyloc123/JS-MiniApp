@@ -17,11 +17,13 @@
             <div class="expense">
                 <h1>Expense Tracker App</h1>
                 <div class="infoTransaction">
-                    <select id="type" class="type">
-                        <option value="income">Income</option>
-                        <option value="expense">Expense</option>
+                    <select id="selectExpense" class="type">
+                        <option value="">Select Expense</option>
+                        <option value="Income">Income</option>
+                        <option value="Expense">Expense</option>
                     </select>
                     <form class="form__info">
+                        
                         <label for="transactionName">
                             Enter Transaction Name:
                         </label>
@@ -33,21 +35,24 @@
                         <button type="submit" id="btn__addTransaction" class="btn__addTransaction">Add Transaction</button>
                     </form>
                     <h2>Transaction List</h2>
-                    <ul class="transactionList" id="transactionList">
-                        <!-- List Expense Tracker -->
-                    </ul>
+                    <div class="listExpense">
+                        <div class="spinner-3" id="loading">...</div>
+                        <ul class="transactionList" id="transactionList">
+                            <!-- List Expense Tracker -->
+                        </ul>
+                    </div>
                     <div class="data">
                         <div class="income" id="income">
                             <i class="fa-solid fa-sack-dollar"></i>
-                            <p class="incomeText">10,000$</p>
+                            <p class="incomeText" id="incomeText">0$</p>
                         </div>
                         <div class="expenseTotal" id="expenseTotal">
                             <i class="fa-solid fa-hand-holding-dollar"></i>
-                            <p class="expenseText">5,000$</p>
+                            <p class="expenseText" id="expenseText">0$</p>
                         </div>
                         <div class="balance" id="balance">
                             <i class="fa-solid fa-wallet"></i>
-                            <p class="balanceText">10,000$</p>
+                            <p class="balanceText" id="blanceText">0$</p>
                         </div>
                     </div>
                 </div>

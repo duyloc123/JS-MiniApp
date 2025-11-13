@@ -83,7 +83,7 @@ typeExpense.addEventListener('change', () => {
 });
 
 function btnAdd() {
-        if(inputTransaction.value !== "" || inputAmount.value !== "") {
+        if(inputTransaction.value !== "" && inputAmount.value !== "") {
             if(typeExpense.value !== "") {
                 loading.style.display = "block";
                 listTransaction.style.opacity = "0.2";

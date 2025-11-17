@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/db6ac4acea.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./shoppingCart.css">
+    <title>Shopping Cart</title>
+</head>
+<body>
+    <div class="shoppingCart">
+        <div class="noficationCheckOut hidden" id="noficationCheckOut">
+            <div class="nofication">
+                <i class="fa-solid fa-calendar-check"></i>
+                <div class="noficationText">Thanh toán thành công!</div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="shoppingHeader">
+                <h1>Shopping Cart</h1>
+                <div class="headerRight">
+                    <div class="cart__icon">
+                        <i class="fa-solid fa-cart-arrow-down" id="btnCart"></i>
+                        <p class="countProduct" id="countProduct"></p>
+                    </div>
+                </div>
+            </div>
+            <div class="shoppingBody">
+                <div class="modalCart hidden" id="modalCart">
+                    <div class="modalHeader">
+                        <span>Tên Sản Phẩm</span>
+                        <span>Số Lượng</span>
+                        <span>Giá Tiền</span>
+                    </div>
+                    <ul class="listCart" id="listCart">
+                    </ul>
+                    <div class="totalCart">
+                        <h3 class="cartTax" id="cartTax">Tax:</h3>
+                        <h3 id="cartDiscount">Discount:</h3>
+                        <h3 id="cartTotal">Total:</h3>
+                    </div>
+                    <button type="button" class="btnCheckout" id="btnCheckout">Check Out</button>
+                </div>
+                <ul class="listProduct" id="listProduct">
+                    <!-- List Product -->
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="./shoppingCart.js" type="module"></script>
+</html>

@@ -1,0 +1,248 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+.shoppingCart {
+    width: 100%;
+    background-color: rgb(240, 240, 240);
+}
+
+.container {
+    width: 1000px;
+    margin: 0 auto;
+}
+
+.shoppingHeader {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 5rem;
+}
+
+.shoppingHeader h1 {
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+}
+
+.cart__icon {
+    position: relative;
+    z-index: 0;
+}
+
+.cart__icon i {
+    font-size: 1.5rem;
+    line-height: 60px;
+    cursor: pointer;
+    transition: color 0.5s ease;
+}
+
+.cart__icon:hover {
+    color: rgb(55, 55, 247);
+}
+
+.countProduct {
+    width: 30px;
+    height: 30px;
+    background-color: rgba(220, 220, 220, 0.492);
+    color: rgb(0, 130, 150);
+    text-align: center;
+    line-height: 30px;
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+    border-bottom-right-radius: 50%;
+    position: absolute;
+    top: -10px;
+    right: -25px;
+}
+
+.shoppingBody {
+    margin-top: 3rem;
+    position: relative;
+}
+
+.listProduct {
+    width: 100%;
+    display: flex;
+    justify-content: start;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.listProduct li {
+    list-style-type: none;
+    flex-basis: 300px;
+    text-align: center;
+    border: 1px solid gray;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: box-shadow 0.5s ease;
+}
+
+.listProduct li:hover {
+    box-shadow: 1px 1px 20px rgba(57, 57, 57, 0.845);
+}
+
+.listProduct .product__image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 20px 20px 0 0;
+}
+
+.listProduct .product__name {
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+.btn__addToCart {
+    width: 80%;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin: 1rem 0;
+    transition: all 0.3s ease;
+}
+
+.listProduct li:hover .btn__addToCart {
+    background-color: rgb(64, 64, 255);
+    color: white;
+}
+
+.modalCart {
+    width: 400px;
+    background-color: ghostwhite;
+    position: absolute;
+    top: -58px;
+    right: 0;
+    border-radius: 20px;
+    transition: all 0.5s ease;
+    padding: 1rem;
+}
+
+.modalCart.hidden {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(50px);
+}
+
+.modalHeader {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.listCart {
+    margin-top: 1rem;
+    border-top: 1px solid black;
+}
+
+.listCart li {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    margin-top: 1rem;
+}
+
+.totalCart {
+    margin-top: 1rem;
+    border-top: 1px solid black;
+}
+
+#cartTax {
+    margin-top: 1rem;
+}
+
+.btnCheckout {
+    width: 100%;
+    margin: 1rem 0;
+    padding: 10px 0;
+    border: none;
+    background-color: ghostwhite;
+    cursor: pointer;
+    font-size: 1rem;
+    text-transform: uppercase;
+    font-weight: 800;
+    letter-spacing: 1.2px;
+    border-radius: 20px;
+    transition: background-color 0.5s ease;
+}
+
+.btnCheckout:hover {
+    background-color:rgb(55, 55, 247,0.6);
+}
+
+.listCart li {
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+
+.listCart li:hover {
+    background-color: rgb(250, 35, 35);
+    color: white;
+}
+
+.noficationCheckOut {
+    width: 300px;
+    height: 80px;
+    background-color: white;
+    text-align: center;
+    border-radius: 5px;
+    color: green;
+    position: absolute;
+    right: 0;
+    top: 40px;
+    z-index: 1;
+    visibility: visible;
+    opacity: 1;
+    transform: translateX(-30px);
+}
+
+.noficationCheckOut.hidden {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(0);
+    transition: all 0.3s linear;
+}
+
+.noficationText {
+    font-size: 1rem;
+    color: red;
+    text-transform: uppercase;
+    margin-top: 10px;
+}
+
+.nofication {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.fa-calendar-check {
+    margin-top: 1rem;
+}
+
+.nofication::after {
+    content: "";
+    width: 0;
+    height: 5px;
+    background-color: rgb(40, 40, 245);;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.nofication.active::after{
+    animation: loading 2s linear forwards;
+}
+
+@keyframes loading {
+    100% {
+        width: 100%;
+    }
+}

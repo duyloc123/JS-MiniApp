@@ -19,6 +19,7 @@ let count = 0;
 function initShoppingCart() {
     cart = JSON.parse(window.localStorage.getItem("cart")) || [];
     setCart(cart);
+    totalCart();
     renderData(data);
 }
 

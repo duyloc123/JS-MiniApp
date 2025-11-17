@@ -173,3 +173,11 @@ h1 {
 .validNofication.hidden {
   display: none;
 }
+
+.faq {
+  color: black;
+}
+
+.faq.active {
+  color: blue;
+}

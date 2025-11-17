@@ -1,0 +1,134 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Zalando Sans SemiExpanded", sans-serif;
+}
+
+:root {
+  --theme-light: #e8e8e8;
+  --theme-dark: #212121;
+}
+
+body {
+  background-color: var(--theme-light);
+  transition: background-color 0.5s ease;
+}
+
+.switch {
+  font-size: 17px;
+  position: relative;
+  display: inline-block;
+  width: 3.5em;
+  height: 2em;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #fff;
+  border: 1px solid #adb5bd;
+  transition: .4s;
+  border-radius: 30px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 1.4em;
+  width: 1.4em;
+  border-radius: 20px;
+  left: 0.27em;
+  bottom: 0.25em;
+  background-color: #adb5bd;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #007bff;
+  border: 1px solid #007bff;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #007bff;
+}
+
+input:checked + .slider:before {
+  transform: translateX(1.4em);
+  background-color: #fff;
+}
+
+.calculationApp {
+  width: 100%;
+  height: 700px;
+  position: relative;
+}
+
+.container {
+  width: 400px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 1rem;
+  border-radius: 20px;
+  box-shadow: 5px 5px 20px gainsboro;
+  background-color: whitesmoke;
+}
+
+.container h1 {
+  text-align: center;
+  text-transform: uppercase;
+  margin: 10px 0;
+}
+
+.calculationTop input {
+  width: 100%;
+  padding: 10px 20px;
+  margin: 10px 0;
+  border: none;
+  background-color: white;
+}
+
+.calculationBody {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.calculationBody .number {
+  flex-basis: 21%;
+  height: 30px;
+  border-radius: 20px;
+  background-color: rgb(255, 255, 255);
+  line-height: 30px;
+  text-align: center;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+.calculationBody .number:hover {
+  opacity: 0.3;
+}
+
+#btnAddNumber,
+#btnSubtraction,
+#btnMultiplication,
+#btnClear,
+#btnResult,
+#btnDivision {
+  background-color: rgb(255, 255, 48);
+}

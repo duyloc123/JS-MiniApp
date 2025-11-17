@@ -337,4 +337,17 @@ function checkUser() {
 console.log(s(5,3));
 console.log(a(5,3));
 
+const active = document.querySelectorAll(".faq");
+
+active.forEach(item => {
+    item.addEventListener('click',() => {
+        if(item.classList.contains("active")) {
+            item.classList.remove("active");
+            return;
+        }
+        active.forEach(items => items.classList.remove("active"));
+        item.classList.add("active");
+    })
+});
+
 
